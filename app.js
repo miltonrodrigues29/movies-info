@@ -13,6 +13,10 @@ app.get("/",function(req,res)
     res.render("home");
 })
 
+app.post("/back",function(req,res)
+{
+    res.redirect("/");
+})
 // post request
 app.post("/", function(req,res){
     const movieName = req.body.movieName;
