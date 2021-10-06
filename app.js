@@ -21,19 +21,20 @@ app.post("/", function(req,res){
     axios.get(url).then(response => {
 
         if(response.data.Response === "True"){
-            // res.render('movieInfo', {
-            //     movieTitle : response.data.Title, 
-            //     moviePlot : response.data.Plot, 
-            //     moviePoster : response.data.Poster,
-            //     imdbRating : typeof response.data.Ratings[0] === 'undefined'? "-/-" :response.data.Ratings[0].Value ,
-            //     rottenRating : typeof response.data.Ratings[1] === 'undefined'? "-/-" :response.data.Ratings[1].Value ,
-            //     metacriticRating: typeof response.data.Ratings[2] === 'undefined'? "-/-" :response.data.Ratings[2].Value ,
-            //     genre : response.data.Genre,
-            //     director : response.data.Director,
-            //     language : response.data.Language,
-            //     awards : response.data.Awards,
-            //     rated : response.data.Rated
-            // });
+
+            res.render('movieInfo', {
+                movieTitle : response.data.Title, 
+                moviePlot : response.data.Plot, 
+                moviePoster : response.data.Poster,
+                imdbRating : typeof response.data.Ratings[0] === 'undefined'? "-/-" :response.data.Ratings[0].Value ,
+                rottenRating : typeof response.data.Ratings[1] === 'undefined'? "-/-" :response.data.Ratings[1].Value ,
+                metacriticRating: typeof response.data.Ratings[2] === 'undefined'? "-/-" :response.data.Ratings[2].Value ,
+                genre : response.data.Genre,
+                director : response.data.Director,
+                language : response.data.Language,
+                awards : response.data.Awards,
+                rated : response.data.Rated
+            });
             console.log(response.data);
         } else{
             res.render('error');
