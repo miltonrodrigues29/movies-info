@@ -1,6 +1,27 @@
 const express = require('express')
 const app = express()
-const imdb = require('imdb-api')
+var axios = require("axios").default;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 app.use(express.static(__dirname + '/public'));
 
@@ -13,7 +34,7 @@ app.get("/",function(req,res)
 })
 
 // imdb.get({name: 'The Toxic Avenger'}, {apiKey: 'foo', timeout: 30000}).then(console.log).catch(console.log);
-
+    
 
 app.listen(3000, function()
 {
